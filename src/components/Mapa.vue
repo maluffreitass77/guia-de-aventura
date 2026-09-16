@@ -160,54 +160,57 @@ onUnmounted(() => {
 .mapa-wrapper {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .painel-coordenadas {
-  background-color: #212529;
-  color: #fff;
-  padding: 8px 12px;
-  font-size: 0.85rem;
+  background-color: #1a252f;
+  color: #ecf0f1;
+  padding: 10px;
+  font-size: 0.8rem;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 5;
 }
 
 #map {
   flex: 1;
   width: 100%;
+  height: 100%;
 }
 
 .card-detalhes {
   position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
   background: #ffffff;
-  padding: 14px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   z-index: 1000;
-  color: #333;
+  color: #2c3e50;
 }
 
 .img-ponto {
   width: 100%;
-  height: 110px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 8px;
 }
 
 .descricao {
   font-size: 0.85rem;
-  color: #555;
-  margin: 4px 0;
+  color: #7f8c8d;
+  margin: 4px 0 8px 0;
 }
 
 .distancia {
   font-size: 0.85rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .acoes {
@@ -215,24 +218,23 @@ onUnmounted(() => {
   gap: 10px;
 }
 
-/* Exigência 6.b: Tamanho adequado de botão para toque mobile */
 .btn {
   flex: 1;
-  min-height: 44px;
+  min-height: 48px;
   font-size: 0.95rem;
   font-weight: bold;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .btn-navegar {
-  background-color: #28a745;
+  background-color: #27ae60;
   color: white;
 }
 
 .btn-fechar {
-  background-color: #dc3545;
+  background-color: #e74c3c;
   color: white;
 }
 </style>
