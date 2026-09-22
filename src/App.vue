@@ -65,7 +65,7 @@ import { ref } from 'vue';
 import Home from './components/Home.vue';
 import Mapa from './components/Mapa.vue';
 import Bussola from './components/Bussola.vue';
-import PertoDeMim from './components/PertoDeMim.vue';
+import PertoDeMim from './components/PertoDemim.vue';
 
 const telaAtiva = ref('mapa');
 
@@ -90,10 +90,20 @@ html, body {
   background-color: #f4f6f8;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
 /* Ocupa 100% da tela do celular sem sobras laterais */
 .app-mobile {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
@@ -102,7 +112,8 @@ html, body {
 .app-bar {
   background: linear-gradient(135deg, #0d6efd, #0a58ca);
   color: white;
-  padding: 16px 20px;
+  padding: max(16px, env(safe-area-inset-top)) 20px 16px;
+  flex: 0 0 auto;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
   z-index: 10;
 }
@@ -125,6 +136,7 @@ html, body {
 
 .app-body {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   position: relative;
 }
@@ -132,6 +144,7 @@ html, body {
 .aba-mapa, .aba-bussola {
   width: 100%;
   height: 100%;
+  min-height: 0;
 }
 
 /* Barra de Navegação estilo Mobile App */
@@ -139,8 +152,10 @@ html, body {
   display: flex;
   background-color: #ffffff;
   border-top: 1px solid #e9ecef;
-  height: 65px;
-  padding-bottom: 5px;
+  height: calc(65px + env(safe-area-inset-bottom));
+  min-height: calc(65px + env(safe-area-inset-bottom));
+  padding-bottom: max(5px, env(safe-area-inset-bottom));
+  flex: 0 0 auto;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
 }
 
